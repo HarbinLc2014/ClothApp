@@ -1,0 +1,10 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "dependencies": {
+    "expo": "^25.0.0",
+    "react": "16.2.0",
+    "react-native": "^0.50.0",
+    "react-native-blur": "^3.2.2"
+  }
+}

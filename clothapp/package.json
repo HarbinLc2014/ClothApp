@@ -3,9 +3,10 @@
   "private": true,
   "dependencies": {
     "eslint-config-rallycoding": "^3.2.0",
-    "expo": "^25.0.0",
-    "react": "16.2.0",
-    "react-native": "0.52.0",
+    "expo": "^23.0.0",
+    "react": "16.0.0",
+    "react-native": "^0.50.0",
+    "react-native-blur": "^3.2.2",
     "react-native-elements": "^0.19.0",
     "react-navigation": "^1.0.0-beta.27",
     "react-redux": "^5.0.6",
