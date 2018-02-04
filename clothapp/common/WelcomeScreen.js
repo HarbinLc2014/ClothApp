@@ -10,11 +10,8 @@ const SLIDE_DATA = [
 ];
 
 class WelcomeScreen extends Component {
-
   componentWillMount() {
-
   }
-
   onSlideComplete = () => {
     this.props.navigation.navigate('login');
   }

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, Image, Platform } from 'react-native';
 import { Card, Button } from 'react-native-elements';
+import { Ionicons, Foundation, Entypo } from '@expo/vector-icons';
 import { connect } from 'react-redux';
+import * as actions from './actions';
+import { likeCloth } from './actions/ClothAction';
 import Swipe from './components/Swipe';
 
 class MatchScreen extends Component {
@@ -11,6 +14,10 @@ class MatchScreen extends Component {
       const { navigation } = props;
       const { navigate } = navigation;
       return {
+        title: '主页',
+        tabBarIcon: ({ tintColor }) => {
+            return <Entypo name="documents" size={30} color={tintColor} />;
+          },
         headerTitle: 'Matching',
         headerStyle: {
           marginTop: Platform.OS === 'android' ? 24 : 0
@@ -47,13 +54,14 @@ class MatchScreen extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, marginTop: 40 }}>
       <Swipe
       data={this.props.clothes}
       renderCard={this.renderCard}
       renderNoMoreCards={this.renderNoMoreCards}
-      person={this.renderCard.cloth}
-      swipeRight={this.swipeRight}
+  //    cloth={this.renderCard.cloth}
+      onSwipeRight={cloth => this.props.likeCloth(cloth)}
+      keyProp="title"
       />
       </View>
     );
@@ -74,4 +82,4 @@ const mapStateToProps = state => {
     return { clothes: state.clothes };
 };
 
-export default connect(mapStateToProps)(MatchScreen);
+export default connect(mapStateToProps, { likeCloth })(MatchScreen);
