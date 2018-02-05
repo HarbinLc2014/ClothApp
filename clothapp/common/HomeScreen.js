@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
-import { Text, View, Platform } from 'react-native';
+import { Text, View, Platform, AppRegistry,
+  StyleSheet,
+  ScrollView,
+  Dimensions,
+  Image,
+    AlertIOS } from 'react-native';
 import { Ionicons, Foundation, Entypo } from '@expo/vector-icons';
+import { TimerMixin } from 'react-timer-mixin';
+import Comp1 from './components/Comp1';
+
+const ImageData = require('./ImageData.json');
 
 class HomeScreen extends Component {
   static navigationOptions = props => {
@@ -20,11 +29,14 @@ class HomeScreen extends Component {
   }
   render() {
     return (
-      <View>
-      <Text>Hello Welcome!</Text>
-      </View>
-    );
+      <View style={{ width: 200, height: 600 }}>
+      <View style={{ flexDirection: 'row', marginTop: 150, marginLeft: 50 }}>
+     <Comp1 />
+     </View>
+     </View>
+   );
   }
 }
+
 
 export default HomeScreen;
